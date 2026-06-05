@@ -12,9 +12,31 @@ Kebanyakan parser NIK di Node.js menggunakan pendekatan *Memory-Resident Hash Ma
 * **Persistent I/O**: Menggunakan *Persistent File Handle* untuk menghindari *overhead* sistem.
 * **Zero Dependency**: Berjalan murni dengan PHP standar tanpa *library* luar.
 
-## Referensi
+---
 
-Dataset wilayah dan referensi logika parsing dalam proyek ini diadaptasi dari implementasi [mul14/nik_parser](https://github.com/mul14/nik_parser.ts). Penggunaan dataset tersebut ditujukan untuk mempermudah pemetaan kode wilayah NIK KTP Indonesia.
+### Cara Penggunaan
+```php
+use Ballspins\NikParser\NikParser;
+
+$parser = new NikParser('3578201503990001');
+$data = $parser->getDetails();
+
+print_r($data);
+```
+
+## API Reference
+
+| Metode | Deskripsi |
+| --- | --- |
+| `isValid()` | Validasi integritas NIK secara keseluruhan. |
+| `province()` | Mendapatkan nama provinsi berdasarkan NIK. |
+| `kabupatenKota()` | Mendapatkan nama kabupaten/kota. |
+| `kecamatan()` | Mendapatkan nama kecamatan. |
+| `birthDate()` | Mendapatkan objek `DateTime` tanggal lahir. |
+| `kelamin()` | Deteksi gender (pria/wanita). |
+| `getDetails()` | Mengembalikan seluruh data dalam array. |
+
+---
 
 ## Perbandingan Benchmark (1 Juta Iterasi)
 
@@ -96,3 +118,7 @@ Proyek ini menyediakan perintah shortcut melalui Composer untuk pemeliharaan dat
 * `composer convert`: Mengonversi `wilayah.json` menjadi `src/wilayah.bin`.
 * `composer validate`: Memastikan integritas `src/wilayah.bin` terhadap sumber data.
 * `composer benchmark`: Menjalankan pengujian performa sistem.
+
+## Referensi
+
+Dataset wilayah dan referensi logika parsing dalam proyek ini diadaptasi dari implementasi [mul14/nik_parser](https://github.com/mul14/nik_parser.ts). Penggunaan dataset tersebut ditujukan untuk mempermudah pemetaan kode wilayah NIK KTP Indonesia.
