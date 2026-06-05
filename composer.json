@@ -1,0 +1,30 @@
+{
+    "name": "ballspins/nik-parser",
+    "description": "Parser NIK Indonesia dengan arsitektur Disk-Backed Binary Search. Dirancang khusus untuk efisiensi memori konstan (< 4 MB) dan skalabilitas maksimal, tanpa ketergantungan library tambahan.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ballspins\\NikParser\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "convert": "php convert.php",
+        "validate": "php validate.php",
+        "benchmark": "php benchmark.php"
+    },
+    "authors": [
+        {
+            "name": "ballspins"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require-dev": {
+        "phpunit/phpunit": "12.5.x-dev"
+    }
+}

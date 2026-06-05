@@ -1,0 +1,1 @@
+{"version":2,"defects":{"Tests\\NikParserTest::test_it_can_parse_valid_male_nik":8,"Tests\\NikParserTest::test_it_can_parse_valid_female_nik":8},"times":{"Tests\\NikParserTest::test_it_can_parse_valid_male_nik":0.005,"Tests\\NikParserTest::test_it_can_parse_valid_female_nik":0.002,"Tests\\NikParserTest::test_it_returns_false_for_invalid_or_fake_nik":0.001}}
