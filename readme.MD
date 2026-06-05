@@ -14,7 +14,33 @@ Kebanyakan parser NIK di Node.js menggunakan pendekatan *Memory-Resident Hash Ma
 
 ---
 
-### Cara Penggunaan
+### API Reference
+
+#### 1. NikParser (Parsing Data)
+
+Metode ini digunakan untuk membaca dan mengekstrak informasi dari NIK yang sudah ada.
+
+| Metode | Deskripsi |
+| --- | --- |
+| `isValid()` | Validasi integritas NIK secara keseluruhan. |
+| `province()` | Mendapatkan nama provinsi berdasarkan NIK. |
+| `kabupatenKota()` | Mendapatkan nama kabupaten/kota. |
+| `kecamatan()` | Mendapatkan nama kecamatan. |
+| `birthDate()` | Mendapatkan objek `DateTime` tanggal lahir. |
+| `kelamin()` | Deteksi gender (`pria` / `wanita`). |
+| `getDetails()` | Mengembalikan seluruh data NIK dalam format *associative array*. |
+
+#### 2. NikGenerator (Pembuatan Data)
+
+Metode statis untuk membuat NIK baru sesuai dengan format standar.
+
+| Metode | Deskripsi |
+| --- | --- |
+| `generate($kecamatanId, $birthDate, $gender, $randomCode)` | Membuat NIK 16 digit. Menangani otomatis *offset* 40 untuk NIK wanita. |
+
+---
+
+### Cara Penggunaan Parser
 ```php
 use Ballspins\NikParser\NikParser;
 
@@ -24,17 +50,18 @@ $data = $parser->getDetails();
 print_r($data);
 ```
 
-## API Reference
+### Contoh Penggunaan Generator
 
-| Metode | Deskripsi |
-| --- | --- |
-| `isValid()` | Validasi integritas NIK secara keseluruhan. |
-| `province()` | Mendapatkan nama provinsi berdasarkan NIK. |
-| `kabupatenKota()` | Mendapatkan nama kabupaten/kota. |
-| `kecamatan()` | Mendapatkan nama kecamatan. |
-| `birthDate()` | Mendapatkan objek `DateTime` tanggal lahir. |
-| `kelamin()` | Deteksi gender (pria/wanita). |
-| `getDetails()` | Mengembalikan seluruh data dalam array. |
+```php
+use Ballspins\NikParser\NikGenerator;
+
+// Generate NIK Pria
+$nik = NikGenerator::generate('357820', new DateTime('1999-03-15'), 'pria');
+
+// Generate NIK Wanita (Otomatis +40 pada tanggal lahir)
+$nikWanita = NikGenerator::generate('357820', new DateTime('2001-08-12'), 'wanita');
+
+```
 
 ---
 
