@@ -143,8 +143,8 @@ Setiap baris data dalam `wilayah.bin` memiliki panjang statis **50 byte**, memun
 
 Proyek ini menyediakan perintah shortcut melalui Composer untuk pemeliharaan data:
 * `composer test`: Menjalankan seluruh rangkaian unit dan integration test menggunakan PHPUnit.
-* `composer convert`: Mengonversi `wilayah.json` menjadi `src/wilayah.bin`.
-* `composer validate`: Memastikan integritas `src/wilayah.bin` terhadap sumber data.
+* `composer convert`: Mengonversi `data/wilayah.json` menjadi `data/wilayah.bin`.
+* `composer validate-data`: Memastikan integritas `data/wilayah.bin` terhadap sumber data.
 * `composer benchmark`: Menjalankan pengujian performa sistem.
 
 ## Referensi

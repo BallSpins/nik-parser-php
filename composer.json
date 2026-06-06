@@ -28,7 +28,7 @@
     "scripts": {
         "test": "php vendor/phpunit/phpunit/phpunit --testdox",
         "convert": "php utility/convert.php",
-        "validate": "php utility/validate.php",
+        "validate-data": "php utility/validate.php",
         "benchmark": "php utility/benchmark.php"
     },
     "config": {
