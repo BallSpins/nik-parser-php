@@ -75,7 +75,7 @@ class NikParser
 
         // 2. Inisialisasi handle sekali saja
         if (self::$fileHandle === null) {
-            $filePath = __DIR__ . '/wilayah.bin';
+            $filePath = __DIR__ . '/../data/wilayah.bin';
             if (!file_exists($filePath)) return null;
             self::$fileHandle = fopen($filePath, 'rb');
             self::$fileSize = filesize($filePath); // Simpan ukuran di static

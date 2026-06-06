@@ -1,7 +1,7 @@
 <?php
 
-$jsonPath = __DIR__ . '/wilayah.json';
-$outputPath = __DIR__ . '/src/wilayah.bin';
+$jsonPath = __DIR__ . '/../data/wilayah.json';
+$outputPath = __DIR__ . '/../data/wilayah.bin';
 
 if (!file_exists($jsonPath)) {
     die("Error: File wilayah.json tidak ditemukan.\n");

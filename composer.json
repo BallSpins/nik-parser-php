@@ -3,6 +3,18 @@
     "description": "Parser NIK Indonesia dengan arsitektur Disk-Backed Binary Search. Dirancang khusus untuk efisiensi memori konstan (< 4 MB) dan skalabilitas maksimal, tanpa ketergantungan library tambahan.",
     "type": "library",
     "license": "MIT",
+    "keywords": ["nik", "parser", "indonesia", "ktp", "binary-search", "high-performance"],
+    "authors": [
+        {
+            "name": "ballspins"
+        }
+    ],
+    "require": {
+        "php": "^8.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "12.5.x-dev"
+    },
     "autoload": {
         "psr-4": {
             "Ballspins\\NikParser\\": "src/"
@@ -14,17 +26,21 @@
         }
     },
     "scripts": {
-        "convert": "php convert.php",
-        "validate": "php validate.php",
-        "benchmark": "php benchmark.php"
+        "test": "php vendor/phpunit/phpunit/phpunit --testdox",
+        "convert": "php utility/convert.php",
+        "validate": "php utility/validate.php",
+        "benchmark": "php utility/benchmark.php"
     },
-    "authors": [
-        {
-            "name": "ballspins"
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "phpunit/phpunit": true
         }
-    ],
-    "minimum-stability": "dev",
-    "require-dev": {
-        "phpunit/phpunit": "12.5.x-dev"
-    }
+    },
+    "support": {
+        "issues": "https://github.com/BallSpins/nik-parser-php/issues",
+        "source": "https://github.com/BallSpins/nik-parser-php"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }

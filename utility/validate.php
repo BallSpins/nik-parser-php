@@ -1,7 +1,7 @@
 <?php
 
-$jsonPath = __DIR__ . '/wilayah.json';
-$binPath = __DIR__ . '/src/wilayah.bin';
+$jsonPath = __DIR__ . '/../data/wilayah.json';
+$binPath = __DIR__ . '/../data/wilayah.bin';
 
 if (!file_exists($jsonPath) || !file_exists($binPath)) {
     die("Error: File source tidak lengkap.\n");

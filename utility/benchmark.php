@@ -1,6 +1,6 @@
 <?php
 // benchmark.php
-require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 use Ballspins\NikParser\NikParser;
 
 $iterations = 1000000;
